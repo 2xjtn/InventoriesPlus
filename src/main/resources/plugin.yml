@@ -1,0 +1,6 @@
+name: InventoryPlus
+version: ${project.version}
+main: org.jacob.spigot.plugins.inventoryplus.InventoryPlus
+api-version: 1.16
+commands:
+  inv:
