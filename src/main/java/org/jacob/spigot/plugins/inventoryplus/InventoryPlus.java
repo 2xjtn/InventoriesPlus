@@ -91,23 +91,6 @@ public final class InventoryPlus extends JavaPlugin {
         }
     }
 
-    public static void saveInventory(Player player, Inventory inv) {
-        FileConfiguration data = instance.getPlayerData();
-
-        if(!data.contains("inventories." + player.getUniqueId().toString())) {
-            data.set("inventories." + player.getUniqueId().toString() + ".content", inv);
-            instance.savePlayerData();
-        }
-    }
-
-    public static Inventory getInventory(OfflinePlayer player) {
-        FileConfiguration data = instance.getPlayerData();
-
-        Inventory inv = (Inventory) data.get("inventories." + player.getUniqueId().toString() + ".content");
-
-        return inv;
-    }
-
     public static Inventory fromBase64(String data) throws IOException {
         try {
             ByteArrayInputStream inputStream = new ByteArrayInputStream(Base64Coder.decodeLines(data));
